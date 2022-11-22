@@ -13,10 +13,10 @@ export const Statistics = ({ title, stats }) => {
     <StatisticsCard>
       {title && <Title>{title}</Title>}
       <StatList>
-        {stats.map(item => (
-          <Item key={item.id} bg={getRandomHexColor()}>
-            <Label>{item.label}</Label>
-            <Percentage>{item.percentage}%</Percentage>
+        {stats.map(({id, label, percentage}) => (
+          <Item key={id} bg={getRandomHexColor()}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
           </Item>
         ))}
       </StatList>
